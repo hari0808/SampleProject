@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+<title>Scenario 2</title>
+</head>
+
+<body>
+  <div id="buttonsContainer"></div>
+</body>
+</html>
+
+<script>
+for (let i = 1; i <= 5; i++) {
+  const button = document.createElement("button");
+  button.innerText = i;
+  button.id = 'Button-' + i;
+  button.setAttribute('index', i);
+  button.addEventListener("click", buttonClicked)
+  buttonsContainer.appendChild(button);
+}
+
+function buttonClicked(element) {
+alert('Name: '+ element.target.id + ' Index: '+ element.target.getAttribute('index')); 
+}
+</script>

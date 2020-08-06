@@ -1,0 +1,95 @@
+
+
+<form style="border:1px solid #ccc" name="myform" onsubmit="return check()">
+
+<head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* Style the active class, and buttons on mouse-over */
+.active, .button:hover {
+  background-color: #666;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+</style>
+</head>
+
+<body onload="displaySignUp()">
+  <div class="container">    
+    <div>
+      <button type="button" class="button" onclick="displaySignUp()">Sign Up</button>
+      <button type="submit" class="button active" onclick="displayLogin()">Login</button>
+    </div>
+    <div id="signupDiv" name="test">  
+    <h1><p>Sign Up for Free</p></h1>    
+
+    <input type="text" placeholder="First Name*" id="firstname" required>
+    <input type="text" placeholder="Last Name*" id="lastname" required>    
+    <input type="text" placeholder="Email Address*" id="email" required>    
+    <input type="password" placeholder="Set A Password*" id="psw" required>  
+   <br/>    
+      <button type="GetStarted" onclick="check(this.form)">GET STARTED</button>
+    </div>
+   
+    <div id="loginDiv">
+    <input type="text" placeholder="Email Address*" name="email" required>    
+    <input type="password" placeholder="Password*" name="psw" required>
+    <button type="submit">GET STARTED</button>
+    </div>
+  </div>
+  </body>
+</form>
+
+
+<script>
+function displayLogin(){
+var loginDiv = document.getElementById("loginDiv");
+  loginDiv.style.display = "block";
+  var signupDiv = document.getElementById("signupDiv");
+  signupDiv.style.display = "none";
+}
+function displaySignUp(){
+var loginDiv = document.getElementById("loginDiv");
+  loginDiv.style.display = "none";
+  var signupDiv = document.getElementById("signupDiv");
+  signupDiv.style.display = "block";
+}
+function check()
+{
+ if(document.getElementById("firstname").value != "" && document.getElementById("lastname").value != "" && document.getElementById("email").value != "" && document.getElementById("psw").value !="")
+  {
+    window.open('https://harman.com/')
+  }
+}
+</script>
